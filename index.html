@@ -156,7 +156,7 @@
    "isPartOf": {
     "@id": "https://lawrencejane.rf.gd/#website"
    },
-   "dateModified": "2026-10-29T01:03:35+02:00"
+   "dateModified": "2026-11-04T04:25:04+02:00"
   }
  ]
 }
@@ -285,10 +285,12 @@
   .hero-photo.full { --r: 1600px; }
   .hero-photo::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg, var(--night) 0%, transparent 14%); }
   .hint { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 2; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--on-night-muted); pointer-events: none; white-space: nowrap; transition: opacity .3s; }
-  .hero-photo.on .hint, .hero-photo.full .hint { opacity: 0; }
+  .hero-photo .hint { opacity: 0; }
+  .hero-photo.bw:not(.on):not(.full) .hint { opacity: 1; }
   @media (prefers-reduced-motion: no-preference) {
     .hero-photo { transition: --r .45s ease; }
     .hero-photo.full, .hero-photo.leaving { transition: --r 1.1s cubic-bezier(.22,.8,.3,1); }
+    .hero-photo.intro { transition: --r 2.4s cubic-bezier(.45,0,.2,1); }
     .hero-photo.full .colour { animation: pop .6s ease; }
   }
   @keyframes pop { from { filter: saturate(.4) brightness(.9); } to { filter: none; } }
@@ -510,7 +512,7 @@
     <div class="hero-photo" id="reveal">
       <img src="assets/img/lawrence-jane-portrait-bw.webp" alt="Portrait of Lawrence Jane in a navy suit, arms folded">
       <img class="colour" src="assets/img/lawrence-jane-portrait.webp" alt="" aria-hidden="true">
-      <span class="hint" id="hint">Hover or double-click for colour</span>
+      <span class="hint" id="hint">Double-click for black &amp; white</span>
     </div>
     <div class="hero-copy">
       <h1><span class="sr-only">Lawrence Jane, </span>GIS Analyst &amp;<br>Remote Sensing Researcher</h1>
@@ -664,7 +666,7 @@
 
   // Colour reveal: spotlight follows the mouse; tap toggles full colour on touch screens
   const rv = document.getElementById('reveal');
-  if (matchMedia('(hover: none)').matches) document.getElementById('hint').textContent = 'Double-tap to see colour';
+  if (matchMedia('(hover: none)').matches) document.getElementById('hint').textContent = 'Double-tap for black & white';
   const move = e => { const b = rv.getBoundingClientRect(); rv.style.setProperty('--x', (e.clientX - b.left) + 'px'); rv.style.setProperty('--y', (e.clientY - b.top) + 'px'); };
   rv.addEventListener('pointermove', e => { if (e.pointerType === 'mouse') { move(e); rv.classList.add('on'); } });
   rv.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') rv.classList.remove('on'); });
@@ -672,7 +674,7 @@
   const setPoint = (x, y) => { const b = rv.getBoundingClientRect(); rv.style.setProperty('--x', (x - b.left) + 'px'); rv.style.setProperty('--y', (y - b.top) + 'px'); };
   const toggleFull = (x, y) => {
     setPoint(x, y);
-    if (rv.classList.contains('full')) { rv.classList.add('leaving'); rv.classList.remove('full'); setTimeout(() => rv.classList.remove('leaving'), 1200); }
+    if (rv.classList.contains('full')) { rv.classList.add('leaving', 'bw'); rv.classList.remove('full'); setTimeout(() => rv.classList.remove('leaving'), 1200); }
     else { rv.classList.add('full'); }
   };
   let touchToggled = 0, lastTap = 0, lastX = 0, lastY = 0;
@@ -683,6 +685,17 @@
     else { lastTap = now; lastX = e.clientX; lastY = e.clientY; }
   });
   rv.addEventListener('dblclick', e => { e.preventDefault(); if (Date.now() - touchToggled > 600) toggleFull(e.clientX, e.clientY); });
+  // On load: colour spreads out from the face, so the photo sits in colour by default
+  const introColour = () => {
+    const b = rv.getBoundingClientRect();
+    rv.style.setProperty('--x', (b.width * 0.5) + 'px'); rv.style.setProperty('--y', (b.height * 0.28) + 'px');
+    rv.classList.add('intro', 'full');
+    setTimeout(() => rv.classList.remove('intro'), 2600);
+  };
+  setTimeout(() => {
+    if (document.querySelector('.intro-splash')) addEventListener('splash-done', () => setTimeout(introColour, 350), { once: true });
+    else setTimeout(introColour, 700);
+  }, 0);
 
   // Hero contour lines: a gently drifting terrain whose contours bulge around the pointer
   (() => {
@@ -826,7 +839,7 @@
     // + type, - backspace, ~ pause (ms)
     const steps = [['~', 650], ['+', 'Lawre'], ['+', 'cn'], ['~', 420], ['-', 2], ['~', 180], ['+', 'nce Jane'], ['~', 650]];
     let done = false, timers = [];
-    const leave = () => { if (done) return; done = true; timers.forEach(clearTimeout); out.textContent = 'Lawrence Jane'; sp.classList.add('out'); setTimeout(() => { sp.remove(); document.documentElement.style.overflow = ''; }, 620); };
+    const leave = () => { if (done) return; done = true; timers.forEach(clearTimeout); out.textContent = 'Lawrence Jane'; sp.classList.add('out'); setTimeout(() => { sp.remove(); document.documentElement.style.overflow = ''; dispatchEvent(new Event('splash-done')); }, 620); };
     let t = 0;
     const at = (ms, fn) => timers.push(setTimeout(fn, ms));
     for (const [op, v] of steps) {
