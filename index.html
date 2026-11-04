@@ -156,7 +156,7 @@
    "isPartOf": {
     "@id": "https://lawrencejane.rf.gd/#website"
    },
-   "dateModified": "2026-11-04T04:27:43+02:00"
+   "dateModified": "2026-11-04T04:30:58+02:00"
   }
  ]
 }
@@ -315,14 +315,15 @@
   :root[data-theme="dark"] .lw .c-d { display: block; }
   :root[data-theme="dark"] .lw .c-l { display: none; }
   .lw .c { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity .3s; }
-  .logos li:hover .lw .w { opacity: 0; }
-  .logos li:hover .lw .c { opacity: 1; }
+  .logos li:hover .lw .w, .logos li.pulse .lw .w { opacity: 0; }
+  .logos li:hover .lw .c, .logos li.pulse .lw .c { opacity: 1; }
   .ub-lock span { transition: color .3s; }
   .logos img { height: 34px; width: auto; max-width: 100%; display: block; }
   .logos img.tall { height: 54px; }
   .logos img.crest { height: 64px; }
   .logos img.crest { filter: grayscale(1) opacity(.85); transition: filter .35s ease; }
-  .logos li:hover img.crest { filter: none; }
+  .logos li:hover img.crest, .logos li.pulse img.crest { filter: none; }
+  .logos li.pulse { opacity: 1; }
   .logos li.ub-lock { flex-direction: row; gap: 12px; }
   .ub-lock span { color: var(--on-night); font-weight: 500; font-size: 15px; line-height: 1.2; letter-spacing: 0.06em; text-transform: uppercase; }
   .logos img.sm { height: 24px; }
@@ -856,6 +857,24 @@
     mq.addEventListener('change', sync);
     new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
     sync();
+  })();
+
+  // Logo ripple: every few seconds a wave of colour passes across the logos, one after another
+  (() => {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const items = [...document.querySelectorAll('.affil .logos li')];
+    const box = document.querySelector('.affil');
+    if (!items.length || !box) return;
+    let visible = false;
+    new IntersectionObserver(es => { visible = es[0].isIntersecting; }, { threshold: 0.3 }).observe(box);
+    const ripple = () => {
+      if (!visible || document.hidden) return;
+      items.forEach((li, i) => {
+        setTimeout(() => { li.classList.add('pulse'); setTimeout(() => li.classList.remove('pulse'), 900); }, i * 160);
+      });
+    };
+    setTimeout(ripple, 1200);
+    setInterval(ripple, 7000);
   })();
 </script>
 </body>
