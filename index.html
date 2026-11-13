@@ -11,8 +11,8 @@
 <link rel="canonical" href="https://lawrencejane.rf.gd/">
 <meta name="geo.region" content="BW-SE">
 <meta name="geo.placename" content="Gaborone">
-<meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#eceeec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#081120" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#eef1f5" media="(prefers-color-scheme: light)">
 
 <!-- Link previews (WhatsApp, Facebook, LinkedIn, X) -->
 <meta property="og:type" content="profile">
@@ -156,7 +156,7 @@
    "isPartOf": {
     "@id": "https://lawrencejane.rf.gd/#website"
    },
-   "dateModified": "2026-11-08T17:42:12+02:00"
+   "dateModified": "2026-11-13T07:26:10+02:00"
   }
  ]
 }
@@ -169,42 +169,45 @@
 <style>
   /* Layout: dark cinematic hero (portrait left, statement right) → light centred intro with curved edge → calm sections. */
   :root {
-    --night: #eceeec;
-    --night-2: #e3e6e4;
-    --on-night: #1c2020;
-    --on-night-muted: #5d6563;
+    --night: #eef1f5;
+    --night-2: #e4e8ee;
+    --on-night: #0c1a2e;
+    --on-night-muted: #56637a;
     --hair: rgba(28,32,32,.16);
     --glass-bg: rgba(255,255,255,.42);
     --glass-bg-hover: rgba(255,255,255,.6);
-    --glass-ink: #1c2020;
+    --glass-ink: #0c1a2e;
     --glass-hi: rgba(255,255,255,.95);
     --glass-lo: rgba(255,255,255,.5);
     --glass-edge: rgba(28,32,32,.10);
     --glass-sheen: rgba(255,255,255,.55);
     --glass-drop: rgba(20,30,28,.10);
     --hair-strong: rgba(28,32,32,.4);
-    --contour-a: rgba(44,74,71,.30);
-    --contour-b: rgba(44,74,71,.13);
+    --contour-a: rgba(11,42,107,.26);
+    --contour-b: rgba(11,42,107,.11);
     --bg: #ffffff;
-    --soft: #f1f3f2;
-    --ink: #1c2020;
-    --muted: #6a716f;
-    --line: #e2e5e3;
+    --soft: #f4f6f9;
+    --ink: #0c1a2e;
+    --muted: #5b6679;
+    --line: #dfe4ec;
     --accent: #2c4a47;
     --accent-ink: #ffffff;
-    --link: #2f7d74;
+    --link: #0b3a8f;
     --font: "Jost", "Futura", "Century Gothic", system-ui, sans-serif;
+    --display: var(--font);
+    --hi: #0b3a8f;
+    --navy: #04205a;
     color-scheme: light;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #161919; --soft: #1d2121; --ink: #ecefed; --muted: #a3aaa7;
-      --line: #2a2f2e; --accent: #3e6b66; --link: #7cc6bb; --night: #111111; --night-2: #1a1d1d; --on-night: #f2f2ef; --on-night-muted: #b9bdb9; --hair: rgba(255,255,255,.16); --glass-bg: rgba(255,255,255,.07); --glass-bg-hover: rgba(255,255,255,.13); --glass-ink: #f2f2ef; --glass-hi: rgba(255,255,255,.6); --glass-lo: rgba(255,255,255,.12); --glass-edge: rgba(255,255,255,.14); --glass-sheen: rgba(255,255,255,.14); --glass-drop: rgba(0,0,0,.35); --hair-strong: rgba(255,255,255,.45); --contour-a: rgba(124,198,187,.28); --contour-b: rgba(124,198,187,.13); color-scheme: dark;
+      --bg: #0c1626; --soft: #101c30; --ink: #e9eef6; --muted: #9aa7bb;
+      --line: #1f2c44; --accent: #3e6b66; --link: #8fb4ff; --hi: #8fb4ff; --night: #081120; --night-2: #0e1a2e; --on-night: #eef2f8; --on-night-muted: #a5b1c4; --hair: rgba(255,255,255,.16); --glass-bg: rgba(255,255,255,.07); --glass-bg-hover: rgba(255,255,255,.13); --glass-ink: #f2f2ef; --glass-hi: rgba(255,255,255,.6); --glass-lo: rgba(255,255,255,.12); --glass-edge: rgba(255,255,255,.14); --glass-sheen: rgba(255,255,255,.14); --glass-drop: rgba(0,0,0,.35); --hair-strong: rgba(255,255,255,.45); --contour-a: rgba(143,180,255,.24); --contour-b: rgba(143,180,255,.11); color-scheme: dark;
     }
   }
   :root[data-theme="dark"] {
-    --bg: #161919; --soft: #1d2121; --ink: #ecefed; --muted: #a3aaa7;
-    --line: #2a2f2e; --accent: #3e6b66; --link: #7cc6bb; --night: #111111; --night-2: #1a1d1d; --on-night: #f2f2ef; --on-night-muted: #b9bdb9; --hair: rgba(255,255,255,.16); --glass-bg: rgba(255,255,255,.07); --glass-bg-hover: rgba(255,255,255,.13); --glass-ink: #f2f2ef; --glass-hi: rgba(255,255,255,.6); --glass-lo: rgba(255,255,255,.12); --glass-edge: rgba(255,255,255,.14); --glass-sheen: rgba(255,255,255,.14); --glass-drop: rgba(0,0,0,.35); --hair-strong: rgba(255,255,255,.45); --contour-a: rgba(124,198,187,.28); --contour-b: rgba(124,198,187,.13); color-scheme: dark;
+    --bg: #0c1626; --soft: #101c30; --ink: #e9eef6; --muted: #9aa7bb;
+    --line: #1f2c44; --accent: #3e6b66; --link: #8fb4ff; --hi: #8fb4ff; --night: #081120; --night-2: #0e1a2e; --on-night: #eef2f8; --on-night-muted: #a5b1c4; --hair: rgba(255,255,255,.16); --glass-bg: rgba(255,255,255,.07); --glass-bg-hover: rgba(255,255,255,.13); --glass-ink: #f2f2ef; --glass-hi: rgba(255,255,255,.6); --glass-lo: rgba(255,255,255,.12); --glass-edge: rgba(255,255,255,.14); --glass-sheen: rgba(255,255,255,.14); --glass-drop: rgba(0,0,0,.35); --hair-strong: rgba(255,255,255,.45); --contour-a: rgba(143,180,255,.24); --contour-b: rgba(143,180,255,.11); color-scheme: dark;
   }
 
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
@@ -212,7 +215,7 @@
   body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.7; font-weight: 400; }
   a, button { outline: none; }
   a:focus-visible, button:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 4px; }
-  h1, h2, h3 { font-weight: 400; margin: 0; text-wrap: balance; line-height: 1.15; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; text-wrap: balance; line-height: 1.08; }
   .wrap {
     max-width: 1140px; margin: 0 auto;
     padding-left: max(24px, env(safe-area-inset-left, 0px));
@@ -245,14 +248,14 @@
   .nav { position: absolute; inset: 0 0 auto; z-index: 3; }
   .nav .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 26px; }
   .brand { color: var(--on-night); text-decoration: none; line-height: 1.1; }
-  .brand .dot { font-style: normal; color: #7cc6bb; }
+  .brand .dot { font-style: normal; color: var(--hi); }
 
   /* Intro: the name settles into place, the dot lands, the screen fades away */
   .intro-splash { position: fixed; inset: 0; z-index: 100; background: var(--night); color: var(--on-night); display: grid; place-items: center; cursor: pointer; }
   .intro-splash .search { display: flex; align-items: center; gap: 14px; width: min(520px, calc(100vw - 48px)); padding: 16px 24px; border: 1px solid var(--hair); border-radius: 999px; opacity: 0; transform: translateY(8px); animation: fadeUp .5s ease .1s forwards; }
-  .intro-splash .search svg { width: 20px; height: 20px; flex: none; stroke: #7cc6bb; fill: none; stroke-width: 2; stroke-linecap: round; }
+  .intro-splash .search svg { width: 20px; height: 20px; flex: none; stroke: var(--hi); fill: none; stroke-width: 2; stroke-linecap: round; }
   .intro-splash .typed { font-size: clamp(1.3rem, 4vw, 1.7rem); letter-spacing: .01em; white-space: pre; min-height: 1.3em; }
-  .intro-splash .caret { display: inline-block; width: 2px; height: 1.3em; background: #7cc6bb; vertical-align: -0.25em; margin-left: 2px; animation: blink 1s steps(1) infinite; }
+  .intro-splash .caret { display: inline-block; width: 2px; height: 1.3em; background: var(--hi); vertical-align: -0.25em; margin-left: 2px; animation: blink 1s steps(1) infinite; }
   .intro-splash.typing .caret { animation: none; }
   @keyframes blink { 50% { opacity: 0; } }
   @keyframes fadeUp { to { opacity: 1; transform: none; } }
@@ -266,7 +269,7 @@
   .nav nav a:hover { opacity: 1; }
   .nav nav { align-items: center; }
   .theme-btn { width: 26px; height: 26px; padding: 0; border-radius: 50%; border: 1px solid var(--hair); background: transparent; color: var(--on-night); display: grid; place-items: center; cursor: pointer; opacity: .8; transition: opacity .2s, border-color .2s; }
-  .theme-btn, .contact-social a { background: linear-gradient(180deg, rgba(255,255,255,.22), rgba(255,255,255,.04)); box-shadow: inset 0 1px 1px rgba(255,255,255,.35), 0 2px 8px rgba(0,0,0,.08); -webkit-backdrop-filter: blur(12px) saturate(170%); backdrop-filter: blur(12px) saturate(170%); }
+  .theme-btn { background: linear-gradient(180deg, rgba(255,255,255,.22), rgba(255,255,255,.04)); box-shadow: inset 0 1px 1px rgba(255,255,255,.35), 0 2px 8px rgba(0,0,0,.08); -webkit-backdrop-filter: blur(12px) saturate(170%); backdrop-filter: blur(12px) saturate(170%); }
   .theme-btn:hover { opacity: 1; border-color: var(--hair-strong); }
   .theme-btn svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
   .theme-btn .i-sun { display: none; }
@@ -275,7 +278,7 @@
 
   .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.15fr 0.85fr; min-height: clamp(760px, 100svh, 1120px); padding-top: 96px; align-items: center; }
   @property --r { syntax: "<length>"; inherits: true; initial-value: 0px; }
-  .hero-photo { align-self: end; height: 100%; position: relative; min-width: 0; --x: 50%; --y: 30%; --r: 0px; cursor: crosshair; touch-action: manipulation; -webkit-user-select: none; user-select: none; }
+  .hero-photo { align-self: end; height: 100%; position: relative; min-width: 0; --x: 50%; --y: 30%; --r: 0px; touch-action: manipulation; -webkit-user-select: none; user-select: none; }
   .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: 50% 100%; display: block; user-select: none; -webkit-user-drag: none; }
   .hero-photo .colour {
     -webkit-mask-image: radial-gradient(circle var(--r) at var(--x) var(--y), #000 55%, transparent 100%);
@@ -284,7 +287,7 @@
   .hero-photo.on { --r: 170px; }
   .hero-photo.full { --r: 1600px; }
   .hero-photo::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg, var(--night) 0%, transparent 14%); }
-  .hint { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 2; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--on-night-muted); pointer-events: none; white-space: nowrap; transition: opacity .3s; }
+  .hint { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 2; font-size: 13px; color: var(--on-night-muted); pointer-events: none; white-space: nowrap; transition: opacity .3s; }
   .hero-photo .hint { opacity: 0; }
   .hero-photo.bw:not(.on):not(.full) .hint { opacity: 1; }
   @media (prefers-reduced-motion: no-preference) {
@@ -293,15 +296,15 @@
     .hero-photo.full .colour { animation: pop .6s ease; }
   }
   @keyframes pop { from { filter: saturate(.4) brightness(.9); } to { filter: none; } }
-  .hero-copy { text-align: center; padding: 120px max(24px, env(safe-area-inset-right, 0px)) 80px 24px; min-width: 0; }
-  .hero-copy h1 { font-size: clamp(2.2rem, 4.2vw, 3.4rem); font-weight: 400; }
-  .hero-copy p { font-size: clamp(1.05rem, 1.6vw, 1.3rem); color: var(--on-night); margin: 14px 0 34px; font-weight: 300; }
-  .hero-copy .btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+  .hero-copy { padding: 60px max(32px, env(safe-area-inset-right, 0px)) 80px 8px; min-width: 0; }
+  .hero-copy h1 { font-size: clamp(2.5rem, 4.6vw, 4.2rem); }
+  .hero-copy p { font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: var(--on-night-muted); margin: 20px 0 34px; max-width: 34ch; line-height: 1.5; }
+  .hero-copy .btns { display: flex; gap: 14px; flex-wrap: wrap; }
 
   /* Affiliations */
-  .affil { background: var(--night); border-top: 1px solid var(--hair); padding-block: 34px 38px; }
-  .affil-label { text-align: center; color: var(--on-night-muted); font-size: 12px; letter-spacing: 0.32em; text-transform: uppercase; margin: 0 0 24px; }
-  .affil-split { width: 60px; height: 1px; background: var(--hair); margin: 30px auto; }
+  .affil { background: var(--night); padding-block: 44px 64px; }
+  .affil-label { text-align: center; color: var(--on-night-muted); font-size: 14px; margin: 0 0 18px; }
+  .affil-split { height: 34px; }
   .logos { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 28px 56px; }
   .logos li { display: flex; flex-direction: column; align-items: center; gap: 6px; opacity: 0.72; transition: opacity .25s; }
   .logos li:hover { opacity: 1; }
@@ -328,93 +331,90 @@
   .ub-lock span { color: var(--on-night); font-weight: 500; font-size: 15px; line-height: 1.2; letter-spacing: 0.06em; text-transform: uppercase; }
   .logos img.sm { height: 24px; }
   .logos img.lg { height: 50px; }
-  .logos small { color: var(--on-night-muted); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; }
+  .logos small { color: var(--on-night-muted); font-size: 13px; }
   .ub { color: #fff; font-weight: 600; font-size: 15px; line-height: 1.15; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; border-left: 2px solid #fff; border-right: 2px solid #fff; padding: 2px 12px; }
   @media (max-width: 520px) { .logos { gap: 22px 32px; } .logos img { height: 26px; } .logos img.tall { height: 44px; } .logos img.sm { height: 19px; } .logos img.lg { height: 40px; } .logos img.crest { height: 52px; } .ub-lock span { font-size: 13px; } }
 
-  /* Intro */
-  .intro { position: relative; overflow: hidden; padding-block: 96px 130px; text-align: center; background: var(--bg); }
-  .intro::after {
-    content: ""; position: absolute; left: -10%; right: -10%; bottom: -1px; height: 70px;
-    background: var(--soft); border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-  }
-  .intro h2 { font-size: clamp(2rem, 4vw, 2.8rem); }
-  .intro .sub { font-size: clamp(1.1rem, 2vw, 1.35rem); margin: 6px 0 34px; }
-  .intro .body { max-width: 760px; margin: 0 auto 44px; color: var(--muted); font-size: 16px; }
-  .intro .body em { font-style: normal; color: var(--link); }
-  .intro .btn { position: relative; z-index: 1; }
+  /* About */
+  .intro { position: relative; overflow: hidden; padding-block: 110px 170px; background: var(--bg); }
+  .intro::after { content: ""; position: absolute; left: -10%; right: -10%; bottom: -1px; height: 70px; background: var(--soft); border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
+  .intro .wrap { position: relative; z-index: 1; }
+  .intro .wrap, .path-sec .wrap { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: start; }
+  .intro .wrap > *, .path-sec .wrap > * { min-width: 0; }
+  .intro h2 { font-size: clamp(2.3rem, 4.8vw, 3.8rem); }
+  .intro .sub { font-size: 1.15rem; color: var(--muted); margin: 14px 0 0; max-width: 24ch; }
+  .intro .body { margin: 6px 0 30px; color: var(--muted); font-size: 17px; max-width: 58ch; }
 
-  /* Soft section */
-  .soft { background: var(--soft); padding-block: 100px 90px; }
-  .section-head { text-align: center; margin-bottom: 48px; }
-  .section-head h2 { font-size: clamp(1.8rem, 3.4vw, 2.4rem); }
-  .section-head p { color: var(--muted); margin: 6px 0 0; }
+  /* What I do */
+  .soft { background: var(--soft); padding-block: 100px; }
+  .section-head { margin-bottom: 44px; }
+  .section-head h2 { font-size: clamp(1.9rem, 3.4vw, 2.7rem); }
+  .section-head p { color: var(--muted); margin: 8px 0 0; }
+  .soft .section-head { text-align: center; margin-bottom: 48px; }
   .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
   .service { background: var(--bg); border-radius: 10px; padding: 32px 28px; text-align: center; min-width: 0; }
   .service h3 { font-size: 1.3rem; margin-bottom: 10px; }
   .service p { margin: 0 0 16px; color: var(--muted); font-size: 15.5px; }
   .service small { color: var(--link); font-size: 13px; letter-spacing: 0.06em; }
 
-  /* Company */
-  .company { padding-block: 100px; background: var(--bg); }
-  .company .grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: center; }
+  .tools-row { list-style: none; margin: 44px 0 0; padding: 0; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 24px 56px; }
+  .tools-row img { height: 30px; width: auto; display: block; filter: grayscale(1); opacity: .5; transition: filter .35s ease, opacity .35s ease; }
+  .tools-row img.t-tall { height: 58px; }
+  .tools-row li:hover img { filter: none; opacity: 1; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tools-row img, :root:not([data-theme="light"]) .tools-row li:hover img { filter: grayscale(1) invert(1) brightness(1.5); } }
+  :root[data-theme="dark"] .tools-row img, :root[data-theme="dark"] .tools-row li:hover img { filter: grayscale(1) invert(1) brightness(1.5); }
+  @media (max-width: 520px) { .tools-row { gap: 20px 36px; } .tools-row img { height: 24px; } .tools-row img.t-tall { height: 46px; } }
+
+  /* Company: navy panel. A rotating terrain of survey points turns to face you, then flattens into the Neoterra logo */
+  .company { padding-block: 110px; background: var(--bg); }
+  .company .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
   .company .grid > * { min-width: 0; }
-  .co-logo { background: var(--soft); border-radius: 14px; padding: 56px 40px; display: flex; flex-direction: column; align-items: center; gap: 18px; }
-  .neo-anim { width: 100%; max-width: 380px; display: flex; align-items: center; gap: 3%; }
-  .neo-anim img { display: block; height: auto; }
-  .neo-anim .mark { flex: 0 0 23%; width: 23%; position: relative; z-index: 1; transform-origin: 0 100%; }
-  .neo-anim .tx { flex: 0 0 74%; width: 74%; overflow: hidden; display: block; }
-  .neo-anim .text { width: 100%; }
+  .co-logo { position: relative; aspect-ratio: 4 / 3; display: grid; place-items: center; padding: 40px 20px; cursor: pointer; }
   .co-logo .dark-only { display: none; }
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .co-logo .light-only { display: none; } :root:not([data-theme="light"]) .co-logo .dark-only { display: flex; } }
   :root[data-theme="dark"] .co-logo .light-only { display: none; }
   :root[data-theme="dark"] .co-logo .dark-only { display: flex; }
-  @media (prefers-reduced-motion: no-preference) {
-    .neo-anim .mark { transition: clip-path .8s cubic-bezier(.65,0,.35,1), transform .8s cubic-bezier(.2,.8,.2,1); }
-    .neo-anim .text { transition: transform 1s cubic-bezier(.16,1,.3,1) .55s, opacity .3s ease .55s; }
-    .co-role { transition: opacity .5s ease 1.3s, transform .5s ease 1.3s; }
-    .co-logo.pre .neo-anim .mark { clip-path: polygon(0 100%, 0 100%, 0 100%, 0 100%); transform: scale(.92); }
-    .co-logo .neo-anim .mark { clip-path: polygon(0 100%, 0 0, 100% 0, 100% 100%); }
-    .co-logo.pre .neo-anim .text { transform: translateX(-104%); opacity: 0; }
-    .co-logo.pre .co-role { opacity: 0; transform: translateY(10px); }
-  }
-  .co-role { font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--link); }
-  .company .eyebrow { font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
-  .company h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 6px; }
-  .company .tag { font-size: 1.2rem; color: var(--link); margin: 0 0 22px; font-weight: 300; }
-  .company p.txt { color: var(--muted); margin: 0 0 16px; max-width: 54ch; }
-  .co-list { list-style: none; padding: 0; margin: 22px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
-  .co-list li { border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: 14px; }
+  .neo-cv { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none; opacity: 0; }
+  .neo-anim { position: relative; width: 100%; max-width: 400px; display: flex; align-items: center; gap: 3%; }
+  .neo-anim img { display: block; height: auto; }
+  .neo-anim .mark { flex: 0 0 23%; width: 23%; }
+  .neo-anim .tx { flex: 0 0 74%; width: 74%; display: block; }
+  .neo-anim .text { width: 100%; }
+  .co-role { position: absolute; left: 0; right: 0; bottom: 22%; text-align: center; font-size: 14px; color: var(--muted); }
+  .co-logo .neo-anim, .co-logo .co-role, .neo-cv { transition: opacity .55s ease; }
+  .co-logo.pre .neo-anim, .co-logo.pre .co-role { opacity: 0; transition-duration: .15s; }
+  .co-logo.pre .neo-cv { opacity: 1; transition-duration: .15s; }
+  .co-logo .co-role { transition-delay: .35s; }
+  .company h2 { font-size: clamp(2.2rem, 4.4vw, 3.4rem); margin-bottom: 18px; }
+  .company p.txt { color: var(--muted); margin: 0 0 16px; max-width: 52ch; }
   @media (max-width: 860px) { .company .grid { grid-template-columns: 1fr; gap: 36px; } .company { padding-block: 72px; } }
 
-  /* Photo band */
-  .band { position: relative; isolation: isolate; color: #f2f2ef; min-height: 520px; display: flex; align-items: center;
-    background: #111 url("assets/img/lawrence-jane-gis-remote-sensing.jpg") 68% 28% / cover no-repeat; }
-  .band::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(17,17,17,.94) 0%, rgba(17,17,17,.72) 45%, rgba(17,17,17,.08) 80%); }
+  /* Photo band: full-width photo with the text over its darkened left side */
+  .band { position: relative; isolation: isolate; color: #f2f5fa; min-height: clamp(560px, 52vw, 820px); display: flex; align-items: center;
+    background: #0c1a2e url("assets/img/lawrence-jane-gis-remote-sensing.jpg") 100% 8% / cover no-repeat; }
+  .band::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(8,17,32,.95) 0%, rgba(8,17,32,.74) 40%, rgba(8,17,32,.06) 72%); }
   .band .wrap { width: 100%; padding-block: 80px; }
-  .band .inner { max-width: 440px; text-align: center; }
-  .band h2 { font-size: clamp(1.9rem, 3.6vw, 2.6rem); margin-bottom: 14px; }
-  .band p { margin: 0 0 28px; color: #c9ccc9; font-weight: 300; }
+  .band .inner { max-width: 440px; }
+  .band h2 { font-size: clamp(2rem, 3.8vw, 3rem); margin-bottom: 16px; }
+  .band p { margin: 0 0 28px; color: rgba(242,245,250,.82); }
 
   /* Gallery */
   .gallery-sec { padding-block: 96px; }
   .gallery { display: flex; gap: 12px; height: 500px; }
-  .gallery figure { margin: 0; min-width: 0; flex: 1 1 0; position: relative; overflow: hidden; border-radius: 14px; cursor: zoom-in; background: var(--night); }
+  .gallery figure { margin: 0; min-width: 0; flex: 1 1 0; position: relative; overflow: hidden; border-radius: 6px; cursor: zoom-in; background: var(--night); }
   .gallery figure.is-active { flex-grow: 3.4; }
   .gallery img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block; filter: grayscale(1) brightness(.8); transform: scale(1.04); }
   .gallery figure.is-active img { filter: none; transform: scale(1); }
-  .gallery figure::after { content: ""; position: absolute; inset: auto 0 0; height: 30%; background: linear-gradient(0deg, rgba(0,0,0,.35), transparent); opacity: 0; pointer-events: none; }
-  .gallery figure.is-active::after { opacity: 1; }
-  .gallery .count { position: absolute; left: 16px; bottom: 14px; z-index: 1; color: #fff; font-size: 12px; letter-spacing: .24em; opacity: 0; }
+  .gallery .count { position: absolute; left: 16px; bottom: 14px; z-index: 1; color: #fff; font-size: 13px; text-shadow: 0 1px 6px rgba(0,0,0,.7); opacity: 0; }
   .gallery figure.is-active .count { opacity: .9; }
   @media (prefers-reduced-motion: no-preference) {
     .gallery figure { transition: flex-grow .7s cubic-bezier(.22,.8,.3,1); }
     .gallery img { transition: filter .6s ease, transform .9s cubic-bezier(.22,.8,.3,1); }
-    .gallery figure::after, .gallery .count { transition: opacity .5s ease; }
+    .gallery .count { transition: opacity .5s ease; }
   }
   .lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(10,12,12,.94); display: flex; align-items: center; justify-content: center;
     padding: max(56px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(56px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
-  .lightbox img { max-width: min(1100px, 100%); max-height: 100%; border-radius: 10px; display: block; }
+  .lightbox img { max-width: min(1100px, 100%); max-height: 100%; border-radius: 4px; display: block; }
   .lb-btn { position: absolute; background: rgba(255,255,255,.1); color: #fff; border: 0; width: 46px; height: 46px; border-radius: 50%; font: 300 24px/1 var(--font); cursor: pointer; display: grid; place-items: center; }
   .lb-btn:hover { background: rgba(255,255,255,.2); }
   .lb-close { top: max(14px, env(safe-area-inset-top, 0px)); right: max(14px, env(safe-area-inset-right, 0px)); }
@@ -423,32 +423,39 @@
   .gallery figcaption { text-align: center; color: var(--muted); font-size: 14px; margin-top: 10px; }
 
   /* Path */
-  .path-sec { background: var(--soft); padding-block: 96px; }
-  .path { list-style: none; margin: 0 auto; padding: 0; max-width: 760px; }
-  .path li { display: grid; grid-template-columns: 140px 1fr; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--line); }
-  .path li:last-child { border-bottom: 0; }
-  .path .when { color: var(--link); font-size: 14px; letter-spacing: 0.06em; padding-top: 4px; }
-  .path h3 { font-size: 1.25rem; font-weight: 500; }
-  .path p { margin: 2px 0 0; color: var(--muted); font-size: 15.5px; }
+  .path-sec { background: var(--soft); padding-block: 100px; }
+  .path-sec .section-head { margin: 0; }
+  .path { list-style: none; margin: 0; padding: 0; display: grid; gap: 30px; }
+  .path li { display: grid; grid-template-columns: 130px 1fr; gap: 20px; }
+  .path .when { color: var(--muted); font-size: 15px; padding-top: 5px; }
+  .path h3 { font-size: 1.3rem; font-weight: 500; }
+  .path p { margin: 4px 0 0; color: var(--muted); font-size: 16px; }
 
   /* Contact */
   .contact { background: var(--night); color: var(--on-night); text-align: center; padding-block: 100px; }
-  .contact h2 { font-size: clamp(2rem, 4vw, 2.8rem); }
-  .contact p { color: var(--on-night-muted); margin: 8px 0 28px; font-weight: 300; }
+  .contact h2 { font-size: clamp(2.3rem, 5vw, 4rem); }
+  .contact p { color: var(--on-night-muted); margin: 14px 0 28px; }
   .email { display: inline-block; font-size: clamp(1.05rem, 2.6vw, 1.4rem); letter-spacing: 0.02em; user-select: all; word-break: break-all; margin-bottom: 22px; }
-  .note { display: block; min-height: 1.6em; color: #7cc6bb; font-size: 14px; margin-top: 10px; }
-  /* Social rail: fixed on the left edge, blends over light and dark sections */
-  .social-rail { position: fixed; left: max(22px, env(safe-area-inset-left, 0px)); bottom: 0; z-index: 20; display: flex; flex-direction: column; align-items: center; gap: 18px; mix-blend-mode: difference; color: #fff; }
-  .social-rail a { color: #fff; display: grid; place-items: center; width: 22px; height: 22px; opacity: .75; transition: opacity .2s, transform .2s; }
-  .social-rail a:hover { opacity: 1; transform: translateY(-2px); }
-  .social-rail svg { width: 17px; height: 17px; fill: currentColor; }
-  .rail-line { width: 1px; height: 90px; background: currentColor; opacity: .5; }
-  .contact-social { margin-top: 26px; display: flex; justify-content: center; gap: 14px; }
-  .contact-social a { display: inline-flex; align-items: center; gap: 8px; color: var(--on-night); text-decoration: none; font-size: 14px; opacity: .8; padding: 8px 14px; border: 1px solid var(--hair); border-radius: 999px; transition: opacity .2s, border-color .2s; }
-  .contact-social a:hover { opacity: 1; border-color: var(--hair-strong); }
-  .contact-social svg { width: 15px; height: 15px; fill: currentColor; }
-  @media (max-width: 860px) { .social-rail { display: none; } }
-  footer { background: var(--night); color: var(--on-night-muted); border-top: 1px solid var(--hair); font-size: 13px; }
+  .note { display: block; min-height: 1.6em; color: var(--hi); font-size: 14px; margin-top: 10px; }
+  .contact-social { margin-top: 30px; display: flex; justify-content: center; gap: 28px; }
+  .contact-social a { position: relative; display: inline-flex; align-items: center; gap: 9px; padding: 6px 2px; color: var(--on-night); text-decoration: none; font-size: 16px; }
+  .contact-social svg { width: 17px; height: 17px; fill: currentColor; }
+  .contact-social a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1.5px; background: currentColor; transform: scaleX(0); transform-origin: left; }
+  .contact-social a:hover::after, .contact-social a:focus-visible::after { transform: scaleX(1); }
+  .contact-social a:nth-child(1):hover { color: #2f8fe6; } .contact-social a:nth-child(2):hover { color: #4a90ff; }
+  @media (prefers-reduced-motion: no-preference) {
+    .contact-social a { transition: color .25s ease, opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
+    .contact-social a::after { transition: transform .35s cubic-bezier(.65,0,.35,1); }
+    .contact-social svg { transition: transform .35s cubic-bezier(.3,1.6,.5,1); animation: socialFloat 4s ease-in-out infinite; }
+    .contact-social a:nth-child(2) svg { animation-delay: .5s; }
+    .contact-social a:hover svg { transform: translateY(-4px) scale(1.2) rotate(-8deg); animation-play-state: paused; }
+    .contact-social a:active { transform: scale(.94); }
+    /* slide up one after the other when the contact section scrolls into view */
+    .contact-social.pre a { opacity: 0; transform: translateY(16px); }
+    .contact-social a:nth-child(2) { transition-delay: 0s, .15s, .15s; }
+  }
+  @keyframes socialFloat { 0%, 70%, 100% { translate: 0 0; } 80% { translate: 0 -4px; } 90% { translate: 0 1px; } }
+  footer { background: var(--night); color: var(--on-night-muted); font-size: 14px; }
   footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-block: 24px; }
 
   @media (max-width: 860px) {
@@ -466,15 +473,15 @@
     .gallery { height: 440px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-inline: -24px; padding-inline: 24px; scroll-padding-inline: 24px; }
     .gallery::-webkit-scrollbar { display: none; }
     .gallery figure, .gallery figure.is-active { flex: 0 0 78%; scroll-snap-align: start; }
-    .gallery img, .gallery figure img { filter: none; transform: none; }
-    .gallery .count { opacity: .9; }
-    .band { min-height: 460px; background-position: 66% 25%; }
-    .band::before { background: linear-gradient(0deg, rgba(17,17,17,.94) 0%, rgba(17,17,17,.55) 55%, rgba(17,17,17,.15) 100%); }
-    .band { align-items: flex-end; }
-    .band .inner { margin: 0 auto; }
+    .band { min-height: 560px; background-position: 84% 0; background-size: auto 62%; align-items: flex-end; }
+    .band::before { background: linear-gradient(0deg, rgba(8,17,32,1) 0%, rgba(8,17,32,1) 40%, rgba(8,17,32,0) 62%); }
+    .band .wrap { padding-block: 40px; }
+    .intro .wrap, .path-sec .wrap { grid-template-columns: 1fr; gap: 28px; }
+    .intro, .soft, .path-sec { padding-block: 72px; }
+    .intro { padding-bottom: 120px; }
+    .intro::after { height: 44px; }
   }
   @media (max-width: 520px) {
-    .brand small { letter-spacing: .22em; white-space: nowrap; }
     .brand b { font-size: 17px; }
     .gallery { height: 400px; }
     .gallery figure, .gallery figure.is-active { flex-basis: 84%; }
@@ -493,7 +500,7 @@
   <canvas id="topo" aria-hidden="true"></canvas>
   <div class="nav">
     <div class="wrap">
-      <a class="brand" href="#top"><span><b>Lawrence Jane<i class="dot">.</i></b><small>GIS · Remote Sensing</small></span></a>
+      <a class="brand" href="#top"><span><b>Lawrence Jane</b></span></a>
       <nav aria-label="Sections">
         <a href="#top">Home</a>
         <a href="#work">Work</a>
@@ -515,8 +522,8 @@
       <span class="hint" id="hint">Double-click for black &amp; white</span>
     </div>
     <div class="hero-copy">
-      <h1><span class="sr-only">Lawrence Jane, </span>GIS Analyst &amp;<br>Remote Sensing Researcher</h1>
-      <p>Environmental Science · GIS · Remote Sensing</p>
+      <h1><span class="sr-only">Lawrence Jane, </span>GIS Analyst &amp; Remote Sensing Researcher</h1>
+      <p>MSc candidate and GIS Teaching Assistant at the University of Botswana. Co-founder of Neoterra.</p>
       <div class="btns">
         <a class="btn" href="#work">Research</a>
         <a class="btn" href="#contact">Contact</a>
@@ -551,10 +558,14 @@
 <main>
   <section class="intro" id="about">
     <div class="wrap">
-      <h2>Mapping for Good</h2>
-      <p class="sub">Turning satellite data into safer communities</p>
-      <p class="body">Hello, I'm Lawrence. I am a part-time MSc student in the <em>Department of Environmental Science</em> at the University of Botswana and a part-time Teaching Assistant, teaching GIS to undergraduates. I work with <em>GIS and satellite imagery</em> to answer environmental questions, and I am the co-founder of <em>Neoterra</em>, a Gaborone-based geospatial company. I work in Setswana and English and I'm open to GIS roles, collaborations and new projects, so please get in touch.</p>
-      <a class="btn" href="#contact">Get in touch</a>
+      <div>
+        <h2>Mapping for Good</h2>
+        <p class="sub">Turning satellite data into safer communities</p>
+      </div>
+      <div>
+        <p class="body">Hello, I'm Lawrence. I am a part-time MSc student in the Department of Environmental Science at the University of Botswana and a part-time Teaching Assistant, teaching GIS to undergraduates. I work with GIS and satellite imagery to answer environmental questions, and I am the co-founder of Neoterra, a Gaborone-based geospatial company. I work in Setswana and English and I'm open to GIS roles, collaborations and new projects, so please get in touch.</p>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
     </div>
   </section>
 
@@ -581,22 +592,30 @@
           <small>Teaching Assistant · Co-founder</small>
         </div>
       </div>
+      <ul class="tools-row" aria-label="Tools I use">
+        <li><img src="assets/logos/t-arcgis.png" alt="ArcGIS" class="t-tall"></li>
+        <li><img src="assets/logos/t-qgis.png" alt="QGIS"></li>
+        <li><img src="assets/logos/t-gee.png" alt="Google Earth Engine" class="t-tall"></li>
+      </ul>
     </div>
   </section>
 
   <section class="company" id="neoterra">
     <div class="wrap grid">
-      <div class="co-logo">
-        <div class="neo-anim light-only" role="img" aria-label="Neoterra — New Earth. Deeper Insight."><img class="mark" src="assets/logos/nc-mark.png" alt=""><span class="tx"><img class="text" src="assets/logos/nc-text.png" alt=""></span></div>
-        <div class="neo-anim dark-only" role="img" aria-label="Neoterra — New Earth. Deeper Insight."><img class="mark" src="assets/logos/nw-mark.png" alt=""><span class="tx"><img class="text" src="assets/logos/nw-text.png" alt=""></span></div>
+      <div class="co-logo" title="Replay">
+        <canvas class="neo-cv" aria-hidden="true"></canvas>
+        <div class="neo-anim light-only" role="img" aria-label="Neoterra, New Earth, Deeper Insight">
+          <img class="mark" src="assets/logos/nc-mark.png" alt=""><span class="tx"><img class="text" src="assets/logos/nc-text.png" alt=""></span>
+        </div>
+        <div class="neo-anim dark-only" role="img" aria-label="Neoterra, New Earth, Deeper Insight">
+          <img class="mark" src="assets/logos/nw-mark.png" alt=""><span class="tx"><img class="text" src="assets/logos/nw-text.png" alt=""></span>
+        </div>
         <span class="co-role">Co-founder</span>
       </div>
       <div>
-        <p class="eyebrow">My company</p>
         <h2>Neoterra</h2>
-        <p class="tag">New Earth. Deeper Insight.</p>
-        <p class="txt">I co-founded Neoterra, a Gaborone-based geospatial company. We use GIS, remote sensing and field data to help clients understand the land they work on, and turn that understanding into clear maps and decisions.</p>
-        <ul class="co-list"><li>Mapping &amp; GIS</li><li>Remote sensing</li><li>Field data</li></ul>
+        <p class="txt">I co-founded Neoterra, a 100% youth-owned geospatial company in Gaborone. We use GIS, remote sensing and field data to help clients understand the land they work on.</p>
+        <p class="txt">The result is clear maps people can make decisions with.</p>
       </div>
     </div>
   </section>
@@ -613,7 +632,7 @@
 
   <section class="gallery-sec" id="events">
     <div class="wrap">
-      <div class="section-head"><h2>Gallery</h2><p id="gal-hint">Hover to explore · click to enlarge</p></div>
+      <div class="section-head"><h2>Gallery</h2></div>
       <div class="gallery">
         <figure class="is-active" tabindex="0"><img loading="lazy" src="assets/img/lawrence-jane-event.jpg" alt="Lawrence Jane smiling with guests at a formal event"><span class="count">01 / 04</span></figure>
         <figure tabindex="0"><img loading="lazy" src="assets/img/lawrence-jane-future-of-mining-summit.jpg" alt="Lawrence Jane speaking at The Future of Mining Summit 2026 stand" style="object-position:70% center"><span class="count">02 / 04</span></figure>
@@ -627,11 +646,11 @@
     <div class="wrap">
       <div class="section-head"><h2>Education &amp; Roles</h2></div>
       <ul class="path">
-        <li><span class="when">NOW</span><div><h3>Co-founder, Neoterra</h3><p>Geospatial company, Gaborone · New Earth. Deeper Insight.</p></div></li>
-        <li><span class="when">NOW</span><div><h3>MSc, Environmental Science</h3><p>University of Botswana · part-time · research using GIS and satellite imagery</p></div></li>
-        <li><span class="when">NOW</span><div><h3>Teaching Assistant, GIS</h3><p>University of Botswana · part-time · undergraduate GIS labs</p></div></li>
-        <li><span class="when">JUN – JUL 2023</span><div><h3>GIS Analyst (Internship)</h3><p>Department of Surveys and Mapping, Selebi Phikwe · spatial analysis and environmental mapping in ArcGIS Pro to support renewable energy and land-use planning</p></div></li>
-        <li><span class="when">2020 – 2024</span><div><h3>BA, Environmental Science</h3><p>University of Botswana · GIS and Remote Sensing stream</p></div></li>
+        <li><span class="when">Now</span><div><h3>Co-founder, Neoterra</h3><p>Youth-owned geospatial company, Gaborone</p></div></li>
+        <li><span class="when">Now</span><div><h3>MSc, Environmental Science</h3><p>University of Botswana · part-time · research using GIS and satellite imagery</p></div></li>
+        <li><span class="when">Now</span><div><h3>Teaching Assistant, GIS</h3><p>University of Botswana · part-time · undergraduate GIS labs</p></div></li>
+        <li><span class="when">Jun to Jul 2023</span><div><h3>GIS Analyst (Internship)</h3><p>Department of Surveys and Mapping, Selebi Phikwe · spatial analysis and environmental mapping in ArcGIS Pro to support renewable energy and land-use planning</p></div></li>
+        <li><span class="when">2020 to 2024</span><div><h3>BA, Environmental Science</h3><p>University of Botswana · GIS and Remote Sensing stream</p></div></li>
       </ul>
     </div>
   </section>
@@ -648,11 +667,6 @@
   </section>
 </main>
 
-<aside class="social-rail" aria-label="Social links">
-  <a href="https://www.linkedin.com/in/lawrence-jane-11344b1bb" target="_blank" rel="noopener" aria-label="Lawrence Jane on LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zM9.5 9.75h3.8v1.5h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1v5.46h-4v-4.84c0-1.16-.02-2.64-1.61-2.64-1.61 0-1.86 1.26-1.86 2.56v4.92h-4z"/></svg></a>
-  <a href="https://www.facebook.com/share/19oQpHhfjr/" target="_blank" rel="noopener" aria-label="Lawrence Jane on Facebook" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21.5v-8h2.7l.4-3.2h-3.1V8.3c0-.9.3-1.6 1.6-1.6h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H7.3v3.2h2.8v8z"/></svg></a>
-  <span class="rail-line"></span>
-</aside>
 <footer>
   <div class="wrap"><span>© 2026 Lawrence Jane</span><span>Gaborone, Botswana</span></div>
 </footer>
@@ -781,39 +795,143 @@
     size(); draw(); start();
   })();
 
-  // Neoterra logo: mark spins in and the name writes itself whenever the section scrolls into view
+  // Neoterra logo: thousands of survey points start as a rotating 3D terrain, turn to face the viewer,
+  // then flatten into the logo. Plays each time the panel scrolls into view; click to replay.
   (() => {
     const box = document.querySelector('.co-logo');
     if (!box || matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
-    const r = box.getBoundingClientRect();
-    if (r.top > innerHeight) box.classList.add('pre');
+    const cv = box.querySelector('.neo-cv'), ctx = cv.getContext('2d');
+    let imgs = [];
+    let raf = 0, pts = [], W = 0, H = 0, t0 = 0, playing = false;
+    const ease = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+    const clamp = x => Math.max(0, Math.min(1, x));
+    const hill = (u, v, p) => .5 + .26 * Math.sin(u * 3.1 + 1 + p) * Math.cos(v * 2.3 - p * .6) + .15 * Math.sin(u * 6.3 + v * 4.1 + p * 1.3) + .09 * Math.cos(v * 7 + u * 2);
+
+    function build() {
+      const lock = [...box.querySelectorAll('.neo-anim')].find(n => n.offsetParent !== null); if (!lock) return false;
+      imgs = [lock.querySelector('.mark'), lock.querySelector('.text')];
+      const b = box.getBoundingClientRect(), dpr = Math.min(devicePixelRatio || 1, 2);
+      W = b.width; H = b.height; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const off = document.createElement('canvas'); off.width = Math.ceil(W); off.height = Math.ceil(H);
+      const o = off.getContext('2d', { willReadFrequently: true });
+      let x0 = Infinity, x1 = -Infinity;
+      imgs.forEach(im => { const r = im.getBoundingClientRect(); o.drawImage(im, r.left - b.left, r.top - b.top, r.width, r.height); x0 = Math.min(x0, r.left - b.left); x1 = Math.max(x1, r.right - b.left); });
+      let data; try { data = o.getImageData(0, 0, off.width, off.height).data; } catch (e) { return false; }
+      const step = W < 420 ? 2.2 : 2.6; pts = [];
+      for (let y = 0; y < off.height; y += step) for (let x = x0; x < x1; x += step) {
+        const k = ((y | 0) * off.width + (x | 0)) * 4;
+        if (data[k + 3] > 110) pts.push({ c: 'rgb(' + data[k] + ',' + data[k + 1] + ',' + data[k + 2] + ')', tx: x, ty: y, u: ((x - x0) / (x1 - x0)) * 2 - 1, v: Math.random() * 2 - 1, d: Math.random() * 380 });
+      }
+      pts.sort((p, q) => p.tx - q.tx).forEach((p, i) => { p.u = (i / (pts.length - 1)) * 2 - 1; });
+      return pts.length > 50;
+    }
+
+    function frame(now) {
+      const t = now - t0;
+      ctx.clearRect(0, 0, W, H);
+      const R = W * .44, f = R * 2.6, cx = W / 2, cy = H * .56;
+      const turn = ease(clamp(t / 1700)), a = -1.15 * (1 - turn), bt = 1.02, phase = t / 900;
+      const ca = Math.cos(a), sa = Math.sin(a), cb = Math.cos(bt), sb = Math.sin(bt);
+      const fadeIn = clamp(t / 450);
+      let moving = false;
+      for (const p of pts) {
+        const X = p.u * R, Z = p.v * R * .62, Y = -hill(p.u, p.v, phase) * R * .34 + R * .1;
+        const xr = X * ca + Z * sa, zr = -X * sa + Z * ca;
+        const yr = Y * cb + zr * sb * .55, zz = -Y * sb * .2 + zr * cb;
+        const sc = f / (f + zz), sx = cx + xr * sc, sy = cy + yr * sc;
+        const m = ease(clamp((t - 1500 - p.d) / 950));
+        if (m < 1) moving = true;
+        const x = sx + (p.tx - sx) * m, y = sy + (p.ty - sy) * m;
+        const depth = clamp(.35 + sc * .5);
+        ctx.globalAlpha = fadeIn * (depth + (1 - depth) * m) * .92;
+        const sz = 1.25 + (1.5 - 1.25) * m;
+        ctx.fillStyle = p.c; ctx.fillRect(x - sz / 2, y - sz / 2, sz, sz);
+      }
+      ctx.globalAlpha = 1;
+      if (moving) raf = requestAnimationFrame(frame);
+      else { playing = false; box.classList.remove('pre'); }
+    }
+
+    async function play() {
+      cancelAnimationFrame(raf);
+      try { await Promise.all([...box.querySelectorAll('img')].map(im => im.decode ? im.decode() : 0)); } catch (e) {}
+      if (!build()) { box.classList.remove('pre'); return; }
+      box.classList.add('pre'); playing = true; t0 = performance.now(); raf = requestAnimationFrame(frame);
+    }
+    box.classList.add('pre');
     new IntersectionObserver(es => es.forEach(e => {
-      if (e.isIntersecting && e.intersectionRatio > 0.45) box.classList.remove('pre');
-      else if (!e.isIntersecting) box.classList.add('pre');
+      if (e.isIntersecting && e.intersectionRatio > 0.45) { if (!playing && box.classList.contains('pre')) play(); }
+      else if (!e.isIntersecting) { cancelAnimationFrame(raf); playing = false; ctx.clearRect(0, 0, W, H); box.classList.add('pre'); }
     }), { threshold: [0, 0.45] }).observe(box);
+    box.addEventListener('click', play);
   })();
 
   // Gallery: hovered panel expands into colour; click opens a lightbox with arrows and Esc
   (() => {
     const figs = [...document.querySelectorAll('.gallery figure')];
     if (!figs.length) return;
-    if (matchMedia('(hover: none)').matches) document.getElementById('gal-hint').textContent = 'Swipe to explore · tap to enlarge';
     const activate = f => figs.forEach(x => x.classList.toggle('is-active', x === f));
+    // Phones: the photo in the middle of the swipe row comes into colour, and the row moves on by itself until touched
+    const row = document.querySelector('.gallery'), narrow = matchMedia('(max-width: 860px)');
+    let tick = false, touched = false, seen = false;
+    const centre = () => { tick = false; if (!narrow.matches) return; const m = row.scrollLeft + row.clientWidth / 2; let best = figs[0], d = Infinity; figs.forEach(f => { const c = f.offsetLeft - row.offsetLeft + f.offsetWidth / 2, k = Math.abs(c - m); if (k < d) { d = k; best = f; } }); activate(best); };
+    row.addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(centre); } }, { passive: true });
+    ['touchstart', 'pointerdown', 'wheel'].forEach(ev => row.addEventListener(ev, () => { touched = true; }, { passive: true }));
+    new IntersectionObserver(es => { seen = es[0].isIntersecting; }, { threshold: 0.5 }).observe(row);
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(() => {
+      if (!narrow.matches || touched || !seen || document.hidden || document.querySelector('.lightbox')) return;
+      const i = (figs.findIndex(f => f.classList.contains('is-active')) + 1) % figs.length;
+      row.scrollTo({ left: figs[i].offsetLeft - row.offsetLeft - (row.clientWidth - figs[i].offsetWidth) / 2, behavior: 'smooth' });
+    }, 3200);
     figs.forEach(f => { f.addEventListener('mouseenter', () => activate(f)); f.addEventListener('focus', () => activate(f)); });
-    let lb = null, idx = 0;
-    const show = i => { idx = (i + figs.length) % figs.length; const im = figs[idx].querySelector('img'); lb.querySelector('img').src = im.src; lb.querySelector('img').alt = im.alt; };
-    const close = () => { if (lb) { lb.remove(); lb = null; document.body.style.overflow = ''; figs[idx].focus({ preventScroll: true }); } };
-    const open = i => {
+    let lb = null, idx = 0, busy = false;
+    const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const EASE = 'cubic-bezier(.2,.8,.2,1)';
+    const set = i => { idx = (i + figs.length) % figs.length; const im = figs[idx].querySelector('img'), big = lb.querySelector('img'); big.src = im.src; big.alt = im.alt; return big; };
+    // where the big photo would have to sit to cover the thumbnail it came from
+    const fromThumb = big => { const a = figs[idx].getBoundingClientRect(), b = big.getBoundingClientRect(); const k = Math.max(.05, a.height / b.height); return 'translate(' + (a.left + a.width / 2 - b.left - b.width / 2) + 'px,' + (a.top + a.height / 2 - b.top - b.height / 2) + 'px) scale(' + k + ')'; };
+    const show = (i, dir) => {
+      if (!lb || busy) return;
+      const big = lb.querySelector('img');
+      if (calm || !big.animate) { set(i); return; }
+      busy = true;
+      big.animate([{ opacity: 1, transform: 'none' }, { opacity: 0, transform: 'translateX(' + (-dir * 60) + 'px) scale(.96)' }], { duration: 170, easing: 'ease-in', fill: 'forwards' }).onfinish = async () => {
+        set(i); try { await big.decode(); } catch (e) {}
+        big.animate([{ opacity: 0, transform: 'translateX(' + (dir * 60) + 'px) scale(.96)' }, { opacity: 1, transform: 'none' }], { duration: 320, easing: EASE, fill: 'forwards' }).onfinish = () => { busy = false; };
+      };
+    };
+    const finish = () => { if (lb) { lb.remove(); lb = null; } busy = false; document.body.style.overflow = ''; figs[idx].focus({ preventScroll: true }); };
+    const close = () => {
+      if (!lb || busy) return;
+      const big = lb.querySelector('img');
+      if (calm || !big.animate) { finish(); return; }
+      busy = true;
+      big.getAnimations().forEach(a => a.cancel());
+      lb.animate([{ backgroundColor: 'rgba(8,12,20,.94)' }, { backgroundColor: 'rgba(8,12,20,0)' }], { duration: 380, easing: 'ease', fill: 'forwards' });
+      lb.querySelectorAll('.lb-btn').forEach(b => b.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 150, fill: 'forwards' }));
+      big.animate([{ transform: 'none', opacity: 1 }, { transform: fromThumb(big), opacity: .2 }], { duration: 380, easing: 'cubic-bezier(.5,0,.3,1)', fill: 'forwards' }).onfinish = finish;
+    };
+    const open = async i => {
+      if (lb) return;
       lb = document.createElement('div'); lb.className = 'lightbox'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.setAttribute('aria-label', 'Photo viewer');
       lb.innerHTML = '<img alt=""><button class="lb-btn lb-close" aria-label="Close">×</button><button class="lb-btn lb-prev" aria-label="Previous photo">‹</button><button class="lb-btn lb-next" aria-label="Next photo">›</button>';
       lb.addEventListener('click', e => { if (e.target === lb) close(); });
       lb.querySelector('.lb-close').onclick = close;
-      lb.querySelector('.lb-prev').onclick = () => show(idx - 1);
-      lb.querySelector('.lb-next').onclick = () => show(idx + 1);
-      document.body.appendChild(lb); document.body.style.overflow = 'hidden'; show(i); lb.querySelector('.lb-close').focus();
+      lb.querySelector('.lb-prev').onclick = () => show(idx - 1, -1);
+      lb.querySelector('.lb-next').onclick = () => show(idx + 1, 1);
+      document.body.appendChild(lb); document.body.style.overflow = 'hidden';
+      const big = set(i); lb.querySelector('.lb-close').focus();
+      if (calm || !big.animate) return;
+      busy = true; big.style.opacity = 0;
+      try { await big.decode(); } catch (e) {}
+      big.style.opacity = '';
+      // the photo grows out of the thumbnail you clicked while the backdrop fades in
+      lb.animate([{ backgroundColor: 'rgba(8,12,20,0)' }, { backgroundColor: 'rgba(8,12,20,.94)' }], { duration: 450, easing: 'ease', fill: 'backwards' });
+      lb.querySelectorAll('.lb-btn').forEach(b => b.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 300, delay: 300, fill: 'backwards' }));
+      big.animate([{ transform: fromThumb(big), opacity: .4 }, { transform: 'none', opacity: 1 }], { duration: 520, easing: EASE, fill: 'backwards' }).onfinish = () => { busy = false; };
     };
     figs.forEach((f, i) => { f.addEventListener('click', () => open(i)); f.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); } }); });
-    addEventListener('keydown', e => { if (!lb) return; if (e.key === 'Escape') close(); if (e.key === 'ArrowRight') show(idx + 1); if (e.key === 'ArrowLeft') show(idx - 1); });
+    addEventListener('keydown', e => { if (!lb) return; if (e.key === 'Escape') close(); if (e.key === 'ArrowRight') show(idx + 1, 1); if (e.key === 'ArrowLeft') show(idx - 1, -1); });
   })();
 
   // Loading screen: someone searches for the name, makes a typo, backspaces, finishes it, then the site opens (tap to skip)
@@ -875,6 +993,14 @@
     };
     setTimeout(ripple, 1200);
     setInterval(ripple, 7000);
+  })();
+
+  // Social links slide in when the contact section comes into view
+  (() => {
+    const el = document.querySelector('.contact-social');
+    if (!el || matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+    el.classList.add('pre');
+    new IntersectionObserver(es => es.forEach(e => el.classList.toggle('pre', !e.isIntersecting)), { threshold: 0.6 }).observe(el);
   })();
 </script>
 </body>
