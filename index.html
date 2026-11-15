@@ -41,6 +41,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
+<link rel="preload" href="assets/fonts/jost.woff2" as="font" type="font/woff2" crossorigin>
 
 <!-- Structured data: tells Google who this page is about -->
 <script type="application/ld+json">
@@ -156,17 +157,16 @@
    "isPartOf": {
     "@id": "https://lawrencejane.rf.gd/#website"
    },
-   "dateModified": "2026-11-13T07:26:10+02:00"
+   "dateModified": "2026-11-15T04:21:30+02:00"
   }
  ]
 }
 </script>
 <style>html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap">
 <style>
+  /* Jost, served with the site itself so it always loads (no Google Fonts dependency) */
+  @font-face { font-family: "Jost"; src: url("assets/fonts/jost.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
   /* Layout: dark cinematic hero (portrait left, statement right) → light centred intro with curved edge → calm sections. */
   :root {
     --night: #eef1f5;
