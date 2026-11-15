@@ -157,13 +157,18 @@
    "isPartOf": {
     "@id": "https://lawrencejane.rf.gd/#website"
    },
-   "dateModified": "2026-11-15T04:36:10+02:00"
+   "dateModified": "2026-11-15T05:12:45+02:00"
   }
  ]
 }
 </script>
 <style>html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <meta name="claude:viewport-fit-sides" content="cover">
+<meta name="color-scheme" content="light dark">
+<script>
+  /* Apply a saved theme before the page paints, so it never flashes the wrong colours */
+  try { const t = localStorage.getItem('lj-theme'); if (t === 'light' || t === 'dark') { document.querySelector('meta[name="color-scheme"]').content = t; document.documentElement.setAttribute('data-theme', t); } } catch (e) {}
+</script>
 <style>
   /* Jost, served with the site itself so it always loads (no Google Fonts dependency) */
   @font-face { font-family: "Jost"; src: url("assets/fonts/jost.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
@@ -416,9 +421,11 @@
     .gallery img { transition: filter .6s ease, transform .9s cubic-bezier(.22,.8,.3,1); }
     .gallery .count { transition: opacity .5s ease; }
   }
-  .lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(10,12,12,.94); display: flex; align-items: center; justify-content: center;
-    padding: max(56px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(56px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
-  .lightbox img { max-width: min(1100px, 100%); max-height: 100%; border-radius: 4px; display: block; }
+  dialog.lightbox { margin: auto; padding: 0; border: 0; background: transparent; overflow: visible; max-width: min(1100px, calc(100vw - 32px)); max-height: calc(100dvh - 112px); }
+  dialog.lightbox:modal { overscroll-behavior: contain; }
+  dialog.lightbox::backdrop { background: rgba(8,12,20,.94); overflow: hidden; overscroll-behavior: contain; }
+  .lightbox img { max-width: 100%; max-height: calc(100dvh - 112px); border-radius: 4px; display: block; }
+  .lightbox .lb-btn { position: fixed; }
   .lb-btn { position: absolute; background: rgba(255,255,255,.1); color: #fff; border: 0; width: 46px; height: 46px; border-radius: 50%; font: 300 24px/1 var(--font); cursor: pointer; display: grid; place-items: center; }
   .lb-btn:hover { background: rgba(255,255,255,.2); }
   .lb-close { top: max(14px, env(safe-area-inset-top, 0px)); right: max(14px, env(safe-area-inset-right, 0px)); }
@@ -904,38 +911,48 @@
         big.animate([{ opacity: 0, transform: 'translateX(' + (dir * 60) + 'px) scale(.96)' }, { opacity: 1, transform: 'none' }], { duration: 320, easing: EASE, fill: 'forwards' }).onfinish = () => { busy = false; };
       };
     };
-    const finish = () => { if (lb) { lb.remove(); lb = null; } busy = false; document.body.style.overflow = ''; figs[idx].focus({ preventScroll: true }); };
+    const finish = () => { if (lb) { const d = lb; lb = null; if (d.open) d.close(); d.remove(); } busy = false; };
     const close = () => {
       if (!lb || busy) return;
       const big = lb.querySelector('img');
       if (calm || !big.animate) { finish(); return; }
       busy = true;
       big.getAnimations().forEach(a => a.cancel());
-      lb.animate([{ backgroundColor: 'rgba(8,12,20,.94)' }, { backgroundColor: 'rgba(8,12,20,0)' }], { duration: 380, easing: 'ease', fill: 'forwards' });
+      try { lb.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 380, easing: 'ease', fill: 'forwards', pseudoElement: '::backdrop' }); } catch (e) {}
       lb.querySelectorAll('.lb-btn').forEach(b => b.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 150, fill: 'forwards' }));
       big.animate([{ transform: 'none', opacity: 1 }, { transform: fromThumb(big), opacity: .2 }], { duration: 380, easing: 'cubic-bezier(.5,0,.3,1)', fill: 'forwards' }).onfinish = finish;
     };
+    // outside clicks for browsers without closedby (the native modal already handles Esc and the back gesture)
+    const outside = (e, d) => { const r = d.getBoundingClientRect(); return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom; };
     const open = async i => {
       if (lb) return;
-      lb = document.createElement('div'); lb.className = 'lightbox'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.setAttribute('aria-label', 'Photo viewer');
-      lb.innerHTML = '<img alt=""><button class="lb-btn lb-close" aria-label="Close">×</button><button class="lb-btn lb-prev" aria-label="Previous photo">‹</button><button class="lb-btn lb-next" aria-label="Next photo">›</button>';
-      lb.addEventListener('click', e => { if (e.target === lb) close(); });
+      lb = document.createElement('dialog'); lb.className = 'lightbox'; lb.setAttribute('closedby', 'any'); lb.setAttribute('aria-label', 'Photo viewer');
+      lb.innerHTML = '<img alt=""><button type="button" class="lb-btn lb-close" aria-label="Close">×</button><button type="button" class="lb-btn lb-prev" aria-label="Previous photo">‹</button><button type="button" class="lb-btn lb-next" aria-label="Next photo">›</button>';
+      // Esc, back gesture and outside clicks all arrive as a close request: play the closing animation instead
+      lb.addEventListener('cancel', e => { e.preventDefault(); close(); });
+      lb.addEventListener('close', () => { if (lb && !busy) { lb.remove(); lb = null; } });
+      if (!('closedBy' in HTMLDialogElement.prototype)) {
+        let pressedOutside = false;
+        lb.addEventListener('pointerdown', e => { pressedOutside = e.target === lb && outside(e, lb); });
+        lb.addEventListener('pointerup', e => { if (pressedOutside && e.target === lb && outside(e, lb)) close(); });
+      }
       lb.querySelector('.lb-close').onclick = close;
       lb.querySelector('.lb-prev').onclick = () => show(idx - 1, -1);
       lb.querySelector('.lb-next').onclick = () => show(idx + 1, 1);
-      document.body.appendChild(lb); document.body.style.overflow = 'hidden';
-      const big = set(i); lb.querySelector('.lb-close').focus();
+      document.body.appendChild(lb);
+      const big = set(i);
+      lb.showModal(); lb.querySelector('.lb-close').focus();
       if (calm || !big.animate) return;
       busy = true; big.style.opacity = 0;
       try { await big.decode(); } catch (e) {}
       big.style.opacity = '';
       // the photo grows out of the thumbnail you clicked while the backdrop fades in
-      lb.animate([{ backgroundColor: 'rgba(8,12,20,0)' }, { backgroundColor: 'rgba(8,12,20,.94)' }], { duration: 450, easing: 'ease', fill: 'backwards' });
+      try { lb.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 450, easing: 'ease', fill: 'backwards', pseudoElement: '::backdrop' }); } catch (e) {}
       lb.querySelectorAll('.lb-btn').forEach(b => b.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 300, delay: 300, fill: 'backwards' }));
       big.animate([{ transform: fromThumb(big), opacity: .4 }, { transform: 'none', opacity: 1 }], { duration: 520, easing: EASE, fill: 'backwards' }).onfinish = () => { busy = false; };
     };
     figs.forEach((f, i) => { f.addEventListener('click', () => open(i)); f.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); } }); });
-    addEventListener('keydown', e => { if (!lb) return; if (e.key === 'Escape') close(); if (e.key === 'ArrowRight') show(idx + 1, 1); if (e.key === 'ArrowLeft') show(idx - 1, -1); });
+    addEventListener('keydown', e => { if (!lb) return; if (e.key === 'ArrowRight') show(idx + 1, 1); if (e.key === 'ArrowLeft') show(idx - 1, -1); });
   })();
 
   // Loading screen: someone searches for the name, makes a typo, backspaces, finishes it, then the site opens (tap to skip)
@@ -962,24 +979,27 @@
     sp.addEventListener('click', leave);
   })();
 
-  // Theme toggle: follows the device by default; the button overrides it and remembers the choice
+  // Theme toggle: follows the device by default. Tapping picks the opposite of what is on screen; if that
+  // matches the device setting, the override is cleared so the site goes back to following the device.
   (() => {
     const btn = document.getElementById('theme-btn'), root = document.documentElement, mq = matchMedia('(prefers-color-scheme: dark)');
-    let saved = null;
-    try { saved = localStorage.getItem('lj-theme'); } catch (e) {}
-    if (saved === 'dark' || saved === 'light') root.setAttribute('data-theme', saved);
+    const meta = document.querySelector('meta[name="color-scheme"]');
+    const read = () => { try { const t = localStorage.getItem('lj-theme'); return t === 'light' || t === 'dark' ? t : null; } catch (e) { return null; } };
+    const render = t => { if (t) root.setAttribute('data-theme', t); else root.removeAttribute('data-theme'); if (meta) meta.content = t || 'light dark'; sync(); };
     const isDark = () => { const t = root.getAttribute('data-theme'); return t ? t === 'dark' : mq.matches; };
     const sync = () => { const d = isDark(); btn.classList.toggle('is-dark', d); btn.setAttribute('aria-label', d ? 'Switch to light mode' : 'Switch to dark mode'); };
-    // Switching theme: the whole page cross-fades softly into the other theme
     btn.addEventListener('click', () => {
       const next = isDark() ? 'light' : 'dark';
-      const apply = () => { root.setAttribute('data-theme', next); try { localStorage.setItem('lj-theme', next); } catch (err) {} sync(); };
+      const system = mq.matches ? 'dark' : 'light';
+      const store = next === system ? null : next;
+      const apply = () => { try { store ? localStorage.setItem('lj-theme', store) : localStorage.removeItem('lj-theme'); } catch (err) {} render(store); };
+      // the whole page cross-fades softly into the other theme
       if (document.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches) { document.startViewTransition(apply); return; }
       root.classList.add('theme-fade'); apply(); setTimeout(() => root.classList.remove('theme-fade'), 600);
     });
+    addEventListener('storage', e => { if (e.key === 'lj-theme') render(read()); });
     mq.addEventListener('change', sync);
-    new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
-    sync();
+    render(read());
   })();
 
   // Logo ripple: every few seconds a wave of colour passes across the logos, one after another
