@@ -157,7 +157,7 @@
    "isPartOf": {
     "@id": "https://lawrencejane.rf.gd/#website"
    },
-   "dateModified": "2026-11-15T04:21:30+02:00"
+   "dateModified": "2026-11-15T04:36:10+02:00"
   }
  ]
 }
@@ -272,6 +272,10 @@
   .theme-btn { background: linear-gradient(180deg, rgba(255,255,255,.22), rgba(255,255,255,.04)); box-shadow: inset 0 1px 1px rgba(255,255,255,.35), 0 2px 8px rgba(0,0,0,.08); -webkit-backdrop-filter: blur(12px) saturate(170%); backdrop-filter: blur(12px) saturate(170%); }
   .theme-btn:hover { opacity: 1; border-color: var(--hair-strong); }
   .theme-btn svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .55s; animation-timing-function: ease; }
+  /* browsers without page cross-fades: colours ease over instead */
+  .theme-fade, .theme-fade * { transition: background-color .45s ease, color .45s ease, border-color .45s ease !important; }
+  @media (prefers-reduced-motion: no-preference) { .theme-btn svg { transition: transform .5s cubic-bezier(.3,1.5,.5,1); } .theme-btn.is-dark svg { transform: rotate(360deg); } }
   .theme-btn .i-sun { display: none; }
   .theme-btn.is-dark .i-sun { display: block; }
   .theme-btn.is-dark .i-moon { display: none; }
@@ -966,11 +970,12 @@
     if (saved === 'dark' || saved === 'light') root.setAttribute('data-theme', saved);
     const isDark = () => { const t = root.getAttribute('data-theme'); return t ? t === 'dark' : mq.matches; };
     const sync = () => { const d = isDark(); btn.classList.toggle('is-dark', d); btn.setAttribute('aria-label', d ? 'Switch to light mode' : 'Switch to dark mode'); };
+    // Switching theme: the whole page cross-fades softly into the other theme
     btn.addEventListener('click', () => {
       const next = isDark() ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      try { localStorage.setItem('lj-theme', next); } catch (e) {}
-      sync();
+      const apply = () => { root.setAttribute('data-theme', next); try { localStorage.setItem('lj-theme', next); } catch (err) {} sync(); };
+      if (document.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches) { document.startViewTransition(apply); return; }
+      root.classList.add('theme-fade'); apply(); setTimeout(() => root.classList.remove('theme-fade'), 600);
     });
     mq.addEventListener('change', sync);
     new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
