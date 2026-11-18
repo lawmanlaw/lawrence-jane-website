@@ -157,7 +157,7 @@
    "isPartOf": {
     "@id": "https://lawrencejane.rf.gd/#website"
    },
-   "dateModified": "2026-11-15T05:12:45+02:00"
+   "dateModified": "2026-11-18T14:39:37+02:00"
   }
  ]
 }
@@ -433,6 +433,13 @@
   .lb-next { right: max(14px, env(safe-area-inset-right, 0px)); top: 50%; transform: translateY(-50%); }
   .gallery figcaption { text-align: center; color: var(--muted); font-size: 14px; margin-top: 10px; }
 
+  /* Short photo banner: text on navy, photo panel on the right */
+  .candid { display: grid; grid-template-columns: 1fr minmax(260px, 34%); height: clamp(240px, 24vw, 340px); background: #0c1a2e; color: #f2f5fa; }
+  .candid .wrap { align-self: center; width: 100%; max-width: none; margin: 0; padding-left: max(24px, calc((100vw - 1140px) / 2 + 24px)); }
+  .candid p { margin: 0; font-size: clamp(1.5rem, 2.8vw, 2.2rem); }
+  .candid .shot { background: url("assets/img/lawrence-jane-candid.jpg") 50% 30% / cover no-repeat; }
+  @media (max-width: 860px) { .candid { grid-template-columns: 1fr 46%; height: 220px; } }
+
   /* Path */
   .path-sec { background: var(--soft); padding-block: 100px; }
   .path-sec .section-head { margin: 0; }
@@ -651,6 +658,11 @@
         <figure tabindex="0"><img loading="lazy" src="assets/img/lawrence-jane-navy-jacket.jpg" alt="Lawrence Jane in a navy jacket, white shirt and black tie"><span class="count">04 / 04</span></figure>
       </div>
     </div>
+  </section>
+
+  <section class="candid" aria-label="Behind the maps">
+    <div class="wrap"><p>Behind the maps</p></div>
+    <div class="shot" role="img" aria-label="Lawrence Jane in a bucket hat"></div>
   </section>
 
   <section class="path-sec" id="path">
