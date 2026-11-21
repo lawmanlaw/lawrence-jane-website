@@ -1,3 +1,11 @@
+# Send everyone to https://lawrencejane.com (old rf.gd address, www and http all redirect)
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^lawrencejane\.com$ [NC]
+RewriteRule ^(.*)$ https://lawrencejane.com/$1 [L,R=301]
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://lawrencejane.com/$1 [L,R=301]
+
 # Faster loading: compress text files and let browsers cache images
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml text/xml application/xml text/plain
